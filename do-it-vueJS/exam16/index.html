@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Event</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="clickBtn">clickBtn 클릭</button>
+        <button v-on:click="clickBtn2(100)">clickBtn2 클릭</button>
+        <button v-on:click="clickBtn3">clickBtn3 클릭</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    <!-- vue -->
+    <script>
+        new Vue({
+            el:'#app',
+            data :{
+                count : 0
+            },
+            methods: {
+                clickBtn : function() {
+                    alert("clickBtn count : "+(this.count++));
+                },
+                clickBtn2 : function(num) {
+                    alert("clickBtn2 count+100 : "+ (this.count+num));
+                },
+                clickBtn3 : function(event) {
+                    console.log(event)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Directive</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+            v-if=""         조건문으로 삭제후 안보여줌
+            v-for=""        반복문
+            v-show=""       if랑 비슷한데 display:none으로 안보여줌      
+            v-bind=""       뷰 데이터속성 연결
+            v-on=""         이벤트처리
+            v-model=""      form 에서 사용 input textarea select 에서만 사용
+         -->
+        <p v-if="flag">{{message}}</p>
+        <ul>
+            <li v-for="item in systems">{{item}}</li>
+        </ul>
+        <p v-show="flag">{{message}}</p>
+        <p v-bind:id="uid">v-bind</p>
+        <button v-on:click="popupAlert">v-on</button>
+        
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    <!-- vue -->
+    <script>
+        new Vue({
+            el:'#app',
+            data : {
+                flag : false,
+                message : 'This is VueJS',
+                systems : ["android","ios","window"],
+                uid : 10
+            },
+            methods : {
+                popupAlert : function(){
+                    alert("popupAlert Methods Call!")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

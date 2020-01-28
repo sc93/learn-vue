@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Axios</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="getData">데이터</button>
+        <ul>
+            <li v-for="user in users">
+                <p>{{user.id}}</p>
+                <p>{{user.name}}</p>
+                <p>{{user.email}}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    <!-- vue -->
+    <!-- <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> vue router -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script><!-- axios -->
+    <!-- <script src="js/app.js"></script> -->
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                users : []
+            },
+            methods :{
+                getData : function() {
+                    var vm = this;
+                    axios.get('https://jsonplaceholder.typicode.com/users/').then(function(res){
+                        console.log(res.data);
+                        vm.users = res.data;
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>

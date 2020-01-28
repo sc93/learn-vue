@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <p>{{message.substr(0,3)}}</p>
+        <p>{{reverseMessage}}</p>
+        <p>{{callHello2}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    <!-- vue -->
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                message : 'Hello Vue!'
+            },
+            computed : {
+                reverseMessage: function() {
+                    return this.message.split("").reverse().join("");
+                },
+                callHello2 : function(){
+                    return 'Hello!!!';
+                }
+            },
+            methods : {
+                callHello : function(){
+                    return 'Hello!!!';
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

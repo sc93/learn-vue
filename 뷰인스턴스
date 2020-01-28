@@ -1,0 +1,28 @@
+var vm = new Vue({
+    el : '#app',
+    data : {
+        message : 'Hello Vue.js' 
+    },
+    template : '<h1>VueJS</h1>',
+    components : {
+        'my-component' : {
+            template : '<h2>JavaScript</h2>
+        }
+    },
+    methods : {
+        showLog : function() {
+            console.log('showLog');
+        }
+    },
+    computed : { 
+        reverseMessage : function() {
+            return this.message.split('').reverse().join('');
+        }
+    },
+    watch : {
+        message : function () {
+            console.log("message값이 바뀜 : " + message);
+        }
+    }
+
+})

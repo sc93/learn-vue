@@ -1,0 +1,33 @@
+v-once
+ - 해당 태그 내 반응성제거 (?)
+ - 뷰의 데이터값이 바뀌어도 화면을 변경하고 싶지 않을 때
+
+v-bind
+ - html속성값에 뷰데이터 값 연결
+ - ex) <p v-bind:style="vueStyle"></p>
+ - ex) <p v-bind:class="vueClass"></p>
+ - ex) <p v-bind:id="vueId"></p>
+ - ex) <p v-bind:propsdata="message"></p>
+ - v-bind:style 은 :style 로 간소화 가능하나 안하는 것이 좋음 
+
+v-if
+ - 지정한 뷰 데이터 값의 참,거짓 여부에 따라 해당 HTML태그를 화면에 표시하거나 표시하지 않음
+ - v-show 랑 다르게 돔에서 없어짐 (삭제됨)
+
+v-for
+ - 지정한 뷰 데이터의 개수만큼 해당 HTML 태그를 반복 출력함
+ - key값이 꼭 필요(?)
+
+v-show
+ - 지정한 뷰 데이터 값의 참,거짓 여부에 따라 해당 HTML태그를 화면에 표시하거나 표시하지 않음
+ - v-if 랑 다르게 display:none으로 숨김
+
+v-on 
+ - 화면 요소의 이벤트를 감지하여 처리할 때 사용
+ - v-on:click 은 해당 태그의 클릭 이벤트를 감지하여 특정 메서드를 실행할 수 있음
+
+v-model
+ - 폼에서 주로 사용되는 속성
+ - 폼에 입력한 값을 뷰 인스턴스의 데이터와 즉시 동기화함.
+ - watch 같은 속성을 이용해서 추가 로직을 수행
+ - input select textarea 태그에서만 사용 가능

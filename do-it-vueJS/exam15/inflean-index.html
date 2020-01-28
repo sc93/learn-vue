@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span v-bind:id="uuid" v-bind:class="name">{{message}}</span>
+        <div v-if="loading">
+            Loading.....
+        </div>
+        <div v-else>
+            test user has been logged in
+        </div>
+        <div v-show="loading">
+            Loading.....
+        </div>
+        <input type="text" v-model="inputText">
+        <p>{{inputText}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    <!-- vue -->
+    <script>
+        new Vue({
+            el:'#app',
+            data : {
+                message : 'v-bind TEST',
+                uuid : '1q2w3e',
+                name : '4r5t6y',
+                loading : true,
+                inputText : ""
+            },
+            computed : {
+
+            }
+        })
+    </script>
+</body>
+</html>
